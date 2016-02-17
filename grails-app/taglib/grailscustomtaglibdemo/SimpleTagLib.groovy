@@ -16,6 +16,12 @@ class SimpleTagLib {
 
 
   def justRender = {
+    println 'request'
+    println request.contextPath
+    println params
+
+    def controllerName=params.controller
+    def actionName=params.action
       out << "Hello"
     }
 
@@ -27,6 +33,7 @@ class SimpleTagLib {
     attrs.times?.toInteger().times { it ->
       // provides the 'i' variable to hold the iteration number
       // or can use the variable name from the 'iterator' attribute
+
       out << body((attrs.iterator ? attrs.iterator : "i") : it)
     }
   }
@@ -38,8 +45,7 @@ class SimpleTagLib {
     def personName = "${person?.firstName} ${person?.lastName}"
 
     if (person?.active){
-      out << link(controller:'person', action:'show',
-        id:person.id){personName}
+      out << link(controller:'person', action:'index'){personName}
     } else {
       out << empName
     }

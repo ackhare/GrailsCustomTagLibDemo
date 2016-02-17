@@ -3,7 +3,7 @@ package grailscustomtaglibdemo
 class SimpleWithNameSpaceTagLib {
     static namespace = "simple"
   def justRender = {
-      out << "Hello"
+      out << "Hello with namespaces"
     }
 
 

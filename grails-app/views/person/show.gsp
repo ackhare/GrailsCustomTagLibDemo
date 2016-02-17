@@ -19,17 +19,7 @@
   </ul>
 </div>
 
-<g:renderList values="[1, 2, 3]" />
 
-<g:iterate times="3" iterator="j">Iterated ${j} times</g:iterate>
-<br/>
-<g:justRender/>
-<g:personLink person="${personInstance}"/>
-<br/>
-<br/>
-<simple:justRender/>
-
-<simple:empList persons="${personInstance}" ></simple:empList>
 
 <div id="show-person" class="content scaffold-show" role="main">
   <h1><g:message code="default.show.label" args="[entityName]"/></h1>
@@ -82,5 +72,28 @@
     </fieldset>
   </g:form>
 </div>
+
+demo
+<demo:justRender1/>
+
+
+///////////////////////////////////////////////////////
+<g:justRender/>
+
+<br/>
+<g:renderList values="[1, 2, 3]" />
+<br/>
+<g:iterate times="3" iterator="j">Iterated ${j} times</g:iterate>
+
+%{--//<g:iterate times="3">Iterated ${i} times</g:iterate>--}%
+
+<br/>
+
+<g:personLink person="${personInstance}"/>
+<br/>
+<br/>
+<simple:justRender/>
+
+<simple:empList persons="${personInstance}" />
 </body>
 </html>
